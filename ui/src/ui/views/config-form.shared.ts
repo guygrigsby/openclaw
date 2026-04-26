@@ -87,12 +87,207 @@ export function hintForPath(path: Array<string | number>, hints: ConfigUiHints) 
   return undefined;
 }
 
+// Special-case labels for well-known config keys. Lookup is case-insensitive
+// against the raw key (after underscore -> space normalization). When a key is
+// not in this map, we fall back to humanize() with smarter acronym handling.
+const SPECIAL_CASE_LABELS: Record<string, string> = {
+  // Identity / auth
+  bottoken: "Bot Token",
+  apikey: "API Key",
+  apibase: "API Base URL",
+  apiurl: "API URL",
+  baseurl: "Base URL",
+  authtoken: "Auth Token",
+  accesstoken: "Access Token",
+  refreshtoken: "Refresh Token",
+  clientid: "Client ID",
+  clientsecret: "Client Secret",
+  appid: "App ID",
+  userid: "User ID",
+  serviceaccount: "Service Account",
+  serviceaccountref: "Service Account Ref",
+  // Channels / messaging
+  dmscope: "DM Scope",
+  dmsallowed: "DMs Allowed",
+  dmsenabled: "DMs Enabled",
+  requiremention: "Require @mention",
+  requirementions: "Require @mentions",
+  requirementioned: "Require @mention",
+  requiredm: "Require DM",
+  controlui: "Control UI",
+  webchat: "Web Chat",
+  // Networking
+  url: "URL",
+  urls: "URLs",
+  uri: "URI",
+  host: "Host",
+  port: "Port",
+  path: "Path",
+  ip: "IP",
+  ipv4: "IPv4",
+  ipv6: "IPv6",
+  dns: "DNS",
+  tls: "TLS",
+  ssl: "SSL",
+  ssh: "SSH",
+  http: "HTTP",
+  https: "HTTPS",
+  ws: "WebSocket",
+  wss: "WebSocket (TLS)",
+  cors: "CORS",
+  // Protocols / surfaces
+  acp: "ACP",
+  mcp: "MCP",
+  llm: "LLM",
+  rpc: "RPC",
+  jsonrpc: "JSON-RPC",
+  cli: "CLI",
+  sdk: "SDK",
+  ui: "UI",
+  ux: "UX",
+  os: "OS",
+  ai: "AI",
+  io: "I/O",
+  fs: "Filesystem",
+  pwa: "PWA",
+  jwt: "JWT",
+  json: "JSON",
+  yaml: "YAML",
+  toml: "TOML",
+  xml: "XML",
+  uuid: "UUID",
+  ttl: "TTL",
+  tts: "TTS",
+  stt: "STT",
+  // Token budgets
+  maxtokens: "Max Tokens",
+  maxinputtokens: "Max Input Tokens",
+  maxoutputtokens: "Max Output Tokens",
+  maxcompletiontokens: "Max Completion Tokens",
+  contexttokens: "Context Tokens",
+  totaltokens: "Total Tokens",
+  tokencount: "Token Count",
+  tokenlimit: "Token Limit",
+  tokenbudget: "Token Budget",
+};
+
+// Acronyms that should remain uppercase when they appear as standalone words in
+// the humanized output. Order does not matter; lookup is by lowercased word.
+const ACRONYM_WORDS = new Set([
+  "acp",
+  "ai",
+  "api",
+  "cli",
+  "cors",
+  "cpu",
+  "css",
+  "db",
+  "dm",
+  "dns",
+  "fs",
+  "gpu",
+  "html",
+  "http",
+  "https",
+  "id",
+  "io",
+  "ip",
+  "json",
+  "jwt",
+  "llm",
+  "mcp",
+  "oauth",
+  "os",
+  "pwa",
+  "rpc",
+  "sdk",
+  "sms",
+  "sql",
+  "ssh",
+  "ssl",
+  "stt",
+  "tcp",
+  "tls",
+  "toml",
+  "tts",
+  "ttl",
+  "ui",
+  "url",
+  "urls",
+  "ux",
+  "uuid",
+  "vm",
+  "ws",
+  "wss",
+  "xml",
+  "yaml",
+]);
+
 export function humanize(raw: string) {
-  return raw
+  if (!raw) {
+    return "";
+  }
+  // Try the special-case lookup first. Normalize by removing non-alphanumerics
+  // and lowercasing so dmScope, dm_scope, DM-Scope all map identically.
+  const normalized = raw.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  const special = SPECIAL_CASE_LABELS[normalized];
+  if (special) {
+    return special;
+  }
+
+  // Insert spaces between camelCase, between letters and digits, and on
+  // contiguous-acronym -> word boundaries (e.g. "DMScope" -> "DM Scope",
+  // "HTTPServer" -> "HTTP Server").
+  const spaced = raw
     .replace(/_/g, " ")
-    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .replace(/-/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")
+    .replace(/([a-zA-Z])([0-9])/g, "$1 $2")
+    .replace(/([0-9])([a-zA-Z])/g, "$1 $2")
     .replace(/\s+/g, " ")
-    .replace(/^./, (m) => m.toUpperCase());
+    .trim();
+
+  // Capitalize each word, but keep known acronyms uppercase.
+  return spaced
+    .split(" ")
+    .map((word) => {
+      const lower = word.toLowerCase();
+      if (ACRONYM_WORDS.has(lower)) {
+        return lower.toUpperCase();
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+// Tags that mark a field as "advanced" — rendered in a collapsed group below
+// the common settings to reduce visual noise.
+const ADVANCED_TAG_VALUES = new Set([
+  "advanced",
+  "expert",
+  "experimental",
+  "internal",
+  "debug",
+  "diagnostic",
+  "diagnostics",
+  "hidden",
+  "deprecated",
+]);
+
+export function isAdvancedTagSet(tags: readonly string[] | undefined): boolean {
+  if (!tags || tags.length === 0) {
+    return false;
+  }
+  for (const tag of tags) {
+    if (typeof tag !== "string") {
+      continue;
+    }
+    if (ADVANCED_TAG_VALUES.has(tag.trim().toLowerCase())) {
+      return true;
+    }
+  }
+  return false;
 }
 
 const SENSITIVE_KEY_WHITELIST_SUFFIXES = [

@@ -11,6 +11,7 @@ import {
   hasSensitiveConfigData,
   hintForPath,
   humanize,
+  isAdvancedTagSet,
   pathKey,
   REDACTED_PLACEHOLDER,
   schemaType,
@@ -993,23 +994,60 @@ function renderObject(params: {
   const additional = schema.additionalProperties;
   const allowExtra = Boolean(additional) && typeof additional === "object";
 
+  // Split common vs. advanced fields. Advanced fields are collapsed by default
+  // so the common ones get the visual focus. We only do this split when there
+  // are common fields too — if everything is advanced, treat them all as common
+  // (otherwise the entire section would render empty/collapsed).
+  const partitioned = sorted.map(([propKey, node]) => {
+    const meta = resolveFieldMeta([...path, propKey], node, hints);
+    const advanced = isAdvancedTagSet(meta.tags);
+    return { propKey, node, advanced };
+  });
+  const hasAdvanced = partitioned.some((p) => p.advanced);
+  const hasCommon = partitioned.some((p) => !p.advanced);
+  const splitAdvanced = hasAdvanced && hasCommon;
+  const commonEntries = splitAdvanced ? partitioned.filter((p) => !p.advanced) : partitioned;
+  const advancedEntries = splitAdvanced ? partitioned.filter((p) => p.advanced) : [];
+
+  const renderProp = (entry: (typeof partitioned)[number]) =>
+    renderNode({
+      schema: entry.node,
+      value: obj[entry.propKey],
+      path: [...path, entry.propKey],
+      hints,
+      rawAvailable,
+      unsupported,
+      disabled,
+      searchCriteria: childSearchCriteria,
+      revealSensitive,
+      isSensitivePathRevealed,
+      onToggleSensitivePath,
+      onPatch,
+    });
+
+  // When a search is active, force the advanced group open so matches inside
+  // it remain visible.
+  const searchActive = Boolean(
+    childSearchCriteria &&
+    (childSearchCriteria.text.length > 0 || childSearchCriteria.tags.length > 0),
+  );
+
   const fields = html`
-    ${sorted.map(([propKey, node]) =>
-      renderNode({
-        schema: node,
-        value: obj[propKey],
-        path: [...path, propKey],
-        hints,
-        rawAvailable,
-        unsupported,
-        disabled,
-        searchCriteria: childSearchCriteria,
-        revealSensitive,
-        isSensitivePathRevealed,
-        onToggleSensitivePath,
-        onPatch,
-      }),
-    )}
+    ${commonEntries.map(renderProp)}
+    ${advancedEntries.length > 0
+      ? html`
+          <details class="cfg-advanced-group" ?open=${searchActive}>
+            <summary class="cfg-advanced-group__header">
+              <span class="cfg-advanced-group__label">
+                Advanced
+                <span class="cfg-advanced-group__count">${advancedEntries.length}</span>
+              </span>
+              <span class="cfg-advanced-group__chevron">${icons.chevronDown}</span>
+            </summary>
+            <div class="cfg-advanced-group__content">${advancedEntries.map(renderProp)}</div>
+          </details>
+        `
+      : nothing}
     ${allowExtra
       ? renderMapField({
           schema: additional,
@@ -1038,9 +1076,13 @@ function renderObject(params: {
     return html` <div class="cfg-fields cfg-fields--inline">${fields}</div> `;
   }
 
-  // Nested objects get collapsible treatment
+  // Nested objects get collapsible treatment. Add a depth class so deeply
+  // nested groups can render with progressively lighter chrome / indentation.
+  // Subtract 1 because path[0] is the top-level section key.
+  const depth = Math.max(1, path.length - 1);
+  const depthClass = `cfg-object--depth-${Math.min(depth, 4)}`;
   return html`
-    <details class="cfg-object" ?open=${path.length <= 2}>
+    <details class="cfg-object ${depthClass}" ?open=${path.length <= 2}>
       <summary class="cfg-object__header">
         <span class="cfg-object__title-wrap">
           <span class="cfg-object__title">${label}</span>
