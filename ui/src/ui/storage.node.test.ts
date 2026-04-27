@@ -196,7 +196,7 @@ describe("loadSettings default gateway URL derivation", () => {
     const scopedKey = "openclaw.control.settings.v1:wss://gateway.example:8443/openclaw";
     expect(JSON.parse(localStorage.getItem(scopedKey) ?? "{}")).toEqual({
       gatewayUrl: "wss://gateway.example:8443/openclaw",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -231,7 +231,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "session-token",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -264,7 +264,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "gateway-a-token",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -282,7 +282,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -313,7 +313,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "memory-only-token",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -331,7 +331,7 @@ describe("loadSettings default gateway URL derivation", () => {
     const scopedKey = `openclaw.control.settings.v1:${gwUrl}`;
     expect(JSON.parse(localStorage.getItem(scopedKey) ?? "{}")).toEqual({
       gatewayUrl: gwUrl,
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -412,7 +412,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "stale-token",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -428,7 +428,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -457,7 +457,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "dash",
+      theme: "turtle",
       themeMode: "light",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -474,7 +474,7 @@ describe("loadSettings default gateway URL derivation", () => {
       string,
       unknown
     >;
-    expect(persisted.theme).toBe("dash");
+    expect(persisted.theme).toBe("turtle");
     expect(persisted.themeMode).toBe("light");
     expect(persisted.navWidth).toBe(320);
   });
@@ -512,7 +512,7 @@ describe("loadSettings default gateway URL derivation", () => {
     expect(settings.customTheme?.themeId).toBe("cmlhfpjhw000004l4f4ax3m7z");
   });
 
-  it("falls back to claw when persisted custom theme data is invalid", () => {
+  it("falls back to talon when persisted custom theme data is invalid", () => {
     setTestLocation({
       protocol: "https:",
       host: "gateway.example:8443",
@@ -552,7 +552,7 @@ describe("loadSettings default gateway URL derivation", () => {
     );
 
     const settings = loadSettings();
-    expect(settings.theme).toBe("claw");
+    expect(settings.theme).toBe("talon");
     expect(settings.themeMode).toBe("dark");
   });
 
@@ -569,7 +569,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "",
       sessionKey: "agent:test_old:main",
       lastActiveSessionKey: "agent:test_old:main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,
@@ -613,7 +613,7 @@ describe("loadSettings default gateway URL derivation", () => {
       token: "",
       sessionKey: "agent:current:main",
       lastActiveSessionKey: "agent:current:main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "system",
       chatFocusMode: false,
       chatShowThinking: true,

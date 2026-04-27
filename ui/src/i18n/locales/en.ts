@@ -421,7 +421,7 @@ export const en: TranslationMap = {
     skills: "Skills and API keys.",
     nodes: "Paired devices and commands.",
     chat: "Gateway chat for quick interventions.",
-    config: "Edit openclaw.json.",
+    config: "Edit talon.json.",
     communications: "Channels, messages, and audio settings.",
     appearance: "Theme, UI, and setup wizard settings.",
     automation: "Commands, hooks, cron, and plugins.",
@@ -494,7 +494,7 @@ export const en: TranslationMap = {
       metadataUpgradeSummary:
         "This device is already paired, but the metadata change is waiting for approval.",
       mobileHint:
-        "On mobile? Copy the full URL (including #token=...) from openclaw dashboard --no-open on your desktop.",
+        "On mobile? Copy the full URL (including #token=...) from talon dashboard --no-open on your desktop.",
       docsTitle: "Device pairing docs (opens in new tab)",
       docsLink: "Docs: Device pairing",
     },
@@ -532,7 +532,7 @@ export const en: TranslationMap = {
       modelAuthExpiresIn: "expires {when}",
       modelAuthAttentionExpiredTitle: "Model auth expired",
       modelAuthAttentionExpiringTitle: "Model auth expiring soon",
-      modelAuthAttentionExpiredDesc: "{providers} — re-authenticate with openclaw models auth",
+      modelAuthAttentionExpiredDesc: "{providers} — re-authenticate with talon models auth",
       modelAuthAttentionExpiringEntry: "{provider} ({when})",
     },
     attention: {

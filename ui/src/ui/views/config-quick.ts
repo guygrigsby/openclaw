@@ -129,9 +129,9 @@ export type QuickSettingsProps = {
 
 type ThemeOption = { id: ThemeName; label: string };
 const BUILTIN_THEME_OPTIONS: ThemeOption[] = [
-  { id: "claw", label: "Claw" },
-  { id: "knot", label: "Knot" },
-  { id: "dash", label: "Dash" },
+  { id: "talon", label: "Talon" },
+  { id: "neon", label: "Neon" },
+  { id: "turtle", label: "Turtle" },
 ];
 
 const BORDER_RADIUS_STOPS: Array<{ value: BorderRadiusStop; label: string }> = [
@@ -931,7 +931,7 @@ function renderPresetsCard(props: QuickSettingsProps) {
         <div class="qs-profiles__copy">
           <div class="qs-profiles__eyebrow">Bootstrap Context</div>
           <p class="qs-profiles__intro">
-            Choose how much workspace context OpenClaw injects into each run. These profiles do not
+            Choose how much workspace context Talon injects into each run. These profiles do not
             change your model, tools, channels, or theme.
           </p>
           ${stateBanner}

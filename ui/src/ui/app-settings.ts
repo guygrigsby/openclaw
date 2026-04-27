@@ -500,8 +500,8 @@ export function syncThemeWithSettings(host: SettingsHost) {
   syncCustomThemeStyleTag(host.settings.customTheme);
   const normalizedTheme =
     host.settings.theme === "custom" && !host.settings.customTheme
-      ? "claw"
-      : (host.settings.theme ?? "claw");
+      ? "talon"
+      : (host.settings.theme ?? "talon");
   host.theme = normalizedTheme;
   host.themeMode = host.settings.themeMode ?? "system";
   if (normalizedTheme !== host.settings.theme) {

@@ -782,9 +782,9 @@ type ThemeOption = {
   icon: TemplateResult;
 };
 const BUILTIN_THEME_OPTIONS: ThemeOption[] = [
-  { id: "claw", label: "Claw", description: "Chroma family", icon: icons.zap },
-  { id: "knot", label: "Knot", description: "Black & red", icon: icons.link },
-  { id: "dash", label: "Dash", description: "Chocolate blueprint", icon: icons.barChart },
+  { id: "talon", label: "Talon", description: "Crow blue on raven black", icon: icons.moon },
+  { id: "neon", label: "Neon", description: "80s laser light show", icon: icons.zap },
+  { id: "turtle", label: "Turtle", description: "Forest green", icon: icons.circle },
 ];
 
 function importedThemeName(props: Pick<ConfigProps, "hasCustomTheme" | "customThemeLabel">) {

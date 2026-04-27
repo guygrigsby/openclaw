@@ -136,7 +136,7 @@ const createHost = (tab: Tab): SettingsHost => ({
     token: "",
     sessionKey: "main",
     lastActiveSessionKey: "main",
-    theme: "claw",
+    theme: "talon",
     themeMode: "system",
     chatFocusMode: false,
     chatShowThinking: true,
@@ -148,9 +148,9 @@ const createHost = (tab: Tab): SettingsHost => ({
     borderRadius: 50,
     textScale: 100,
   },
-  theme: "claw" as unknown as ThemeName & ThemeMode,
+  theme: "talon" as unknown as ThemeName & ThemeMode,
   themeMode: "system",
-  themeResolved: "dark",
+  themeResolved: "talon",
   applySessionKey: "main",
   sessionKey: "main",
   tab,
@@ -280,20 +280,20 @@ describe("setTabFromRoute", () => {
 
   it("re-resolves the active palette when only themeMode changes", () => {
     const host = createHost("chat");
-    host.settings.theme = "knot";
+    host.settings.theme = "neon";
     host.settings.themeMode = "dark";
-    host.theme = "knot" as unknown as ThemeName & ThemeMode;
+    host.theme = "neon" as unknown as ThemeName & ThemeMode;
     host.themeMode = "dark";
-    host.themeResolved = "openknot";
+    host.themeResolved = "neon";
 
     applySettings(host, {
       ...host.settings,
       themeMode: "light",
     });
 
-    expect(host.theme).toBe("knot");
+    expect(host.theme).toBe("neon");
     expect(host.themeMode).toBe("light");
-    expect(host.themeResolved).toBe("openknot-light");
+    expect(host.themeResolved).toBe("neon-light");
   });
 
   it("applies normalized browser-local text scale", () => {
@@ -310,26 +310,26 @@ describe("setTabFromRoute", () => {
 
   it("syncs both theme family and mode from persisted settings", () => {
     const host = createHost("chat");
-    host.settings.theme = "dash";
+    host.settings.theme = "turtle";
     host.settings.themeMode = "light";
 
     syncThemeWithSettings(host);
 
-    expect(host.theme).toBe("dash");
+    expect(host.theme).toBe("turtle");
     expect(host.themeMode).toBe("light");
-    expect(host.themeResolved).toBe("dash-light");
+    expect(host.themeResolved).toBe("turtle-light");
   });
 
-  it("falls back to claw when custom is selected without a stored custom theme", () => {
+  it("falls back to talon when custom is selected without a stored custom theme", () => {
     const host = createHost("chat");
     host.settings.theme = "custom";
     host.settings.themeMode = "dark";
 
     syncThemeWithSettings(host);
 
-    expect(host.theme).toBe("claw");
-    expect(host.settings.theme).toBe("claw");
-    expect(host.themeResolved).toBe("dark");
+    expect(host.theme).toBe("talon");
+    expect(host.settings.theme).toBe("talon");
+    expect(host.themeResolved).toBe("talon");
   });
 
   it("applies named system themes on OS preference changes", () => {
@@ -348,15 +348,15 @@ describe("setTabFromRoute", () => {
     });
 
     const host = createHost("chat");
-    host.settings.theme = "knot" as unknown as ThemeName & ThemeMode;
+    host.settings.theme = "neon" as unknown as ThemeName & ThemeMode;
     host.settings.themeMode = "system";
 
     syncThemeWithSettings(host);
     listeners[0]?.({ matches: true } as MediaQueryListEvent);
-    expect(host.themeResolved).toBe("openknot");
+    expect(host.themeResolved).toBe("neon");
 
     listeners[0]?.({ matches: false } as MediaQueryListEvent);
-    expect(host.themeResolved).toBe("openknot");
+    expect(host.themeResolved).toBe("neon");
   });
 
   it("normalizes light family themes to the shared light CSS token", () => {
@@ -367,10 +367,10 @@ describe("setTabFromRoute", () => {
     vi.stubGlobal("document", { documentElement: root } as Document);
 
     const host = createHost("chat");
-    applyResolvedTheme(host, "dash-light");
+    applyResolvedTheme(host, "turtle-light");
 
-    expect(host.themeResolved).toBe("dash-light");
-    expect(root.dataset.theme).toBe("dash-light");
+    expect(host.themeResolved).toBe("turtle-light");
+    expect(root.dataset.theme).toBe("turtle-light");
     expect(root.style.colorScheme).toBe("light");
   });
 

@@ -36,7 +36,7 @@ function createState(overrides: Partial<AppViewState> = {}) {
       locale: "en",
       sessionKey: "main",
       lastActiveSessionKey: "main",
-      theme: "claw",
+      theme: "talon",
       themeMode: "dark",
       splitRatio: 0.6,
       navWidth: 280,

@@ -1,6 +1,6 @@
 {
-  "name": "OpenClaw Control",
-  "short_name": "OpenClaw",
+  "name": "Talon Control",
+  "short_name": "Talon",
   "description": "Multi-channel AI gateway control panel",
   "start_url": "./",
   "display": "standalone",

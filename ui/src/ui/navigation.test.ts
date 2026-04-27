@@ -96,7 +96,7 @@ describe("subtitleForTab", () => {
       skills: "Skills and API keys.",
       nodes: "Paired devices and commands.",
       dreams: "Memory dreaming, consolidation, and reflection.",
-      config: "Edit openclaw.json.",
+      config: "Edit talon.json.",
       communications: "Channels, messages, and audio settings.",
       appearance: "Theme, UI, and setup wizard settings.",
       automation: "Commands, hooks, cron, and plugins.",

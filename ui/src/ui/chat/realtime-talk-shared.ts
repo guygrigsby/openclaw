@@ -216,16 +216,16 @@ function waitForChatResult(params: {
 }): Promise<string> {
   return new Promise((resolve, reject) => {
     if (params.signal?.aborted) {
-      reject(new DOMException("OpenClaw tool call aborted", "AbortError"));
+      reject(new DOMException("Talon tool call aborted", "AbortError"));
       return;
     }
     const timer = window.setTimeout(() => {
       cleanup();
-      reject(new Error("OpenClaw tool call timed out"));
+      reject(new Error("Talon tool call timed out"));
     }, params.timeoutMs);
     const onAbort = () => {
       cleanup();
-      reject(new DOMException("OpenClaw tool call aborted", "AbortError"));
+      reject(new DOMException("Talon tool call aborted", "AbortError"));
     };
     params.signal?.addEventListener("abort", onAbort, { once: true });
     let unsubscribe: () => void = () => undefined;
@@ -239,15 +239,15 @@ function waitForChatResult(params: {
       }
       if (payload.state === "final") {
         cleanup();
-        resolve(extractTextFromMessage(payload.message) || "OpenClaw finished with no text.");
+        resolve(extractTextFromMessage(payload.message) || "Talon finished with no text.");
       } else if (payload.state === "aborted") {
         cleanup();
         reject(
-          new DOMException(payload.errorMessage ?? "OpenClaw tool call aborted", "AbortError"),
+          new DOMException(payload.errorMessage ?? "Talon tool call aborted", "AbortError"),
         );
       } else if (payload.state === "error") {
         cleanup();
-        reject(new Error(payload.errorMessage ?? "OpenClaw tool call failed"));
+        reject(new Error(payload.errorMessage ?? "Talon tool call failed"));
       }
     });
     function cleanup() {
@@ -295,7 +295,7 @@ export async function submitRealtimeTalkConsult(params: {
     );
     runId = response.runId ?? response.idempotencyKey;
     if (!runId) {
-      throw new Error("OpenClaw realtime tool call did not return a run id");
+      throw new Error("Talon realtime tool call did not return a run id");
     }
     if (params.signal?.aborted) {
       abortRun();

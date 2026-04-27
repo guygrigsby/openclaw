@@ -40,7 +40,7 @@ export class DashboardHeader extends LitElement {
             href=${pathForTab("overview", this.basePath)}
             @click=${this.handleOverviewClick}
           >
-            OpenClaw
+            Talon
           </a>
           ${agentLabel
             ? html`

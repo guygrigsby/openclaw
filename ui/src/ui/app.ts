@@ -167,9 +167,9 @@ export class OpenClawApp extends LitElement {
   @state() tab: Tab = "chat";
   @state() onboarding = resolveOnboardingMode();
   @state() connected = false;
-  @state() theme: ThemeName = this.settings.theme ?? "claw";
+  @state() theme: ThemeName = this.settings.theme ?? "talon";
   @state() themeMode: ThemeMode = this.settings.themeMode ?? "system";
-  @state() themeResolved: ResolvedTheme = "dark";
+  @state() themeResolved: ResolvedTheme = "talon";
   @state() themeOrder: ThemeName[] = this.buildThemeOrder(this.theme);
   @state() customThemeImportUrl = "";
   @state() customThemeImportBusy = false;
@@ -871,7 +871,7 @@ export class OpenClawApp extends LitElement {
   }
 
   clearCustomTheme() {
-    const nextTheme = this.theme === "custom" ? "claw" : this.theme;
+    const nextTheme = this.theme === "custom" ? "talon" : this.theme;
     this.customThemeImportExpanded = true;
     this.customThemeImportSelectOnSuccess = false;
     applySettingsInternal(this as unknown as Parameters<typeof applySettingsInternal>[0], {
@@ -1060,7 +1060,7 @@ export class OpenClawApp extends LitElement {
           }
         },
         onTranscript: (entry) => {
-          this.realtimeTalkTranscript = `${entry.role === "user" ? "You" : "OpenClaw"}: ${entry.text}`;
+          this.realtimeTalkTranscript = `${entry.role === "user" ? "You" : "Talon"}: ${entry.text}`;
         },
       },
       this.buildRealtimeTalkLaunchOptions(),

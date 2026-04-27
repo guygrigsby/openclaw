@@ -59,7 +59,7 @@ function createProps(overrides: Partial<QuickSettingsProps> = {}): QuickSettings
     onSecurityConfigure: vi.fn(),
     onBrowserEnabledToggle: vi.fn(),
     onToolProfileChange: vi.fn(),
-    theme: "claw",
+    theme: "talon",
     themeMode: "system",
     hasCustomTheme: false,
     customThemeLabel: null,
@@ -471,7 +471,7 @@ describe("renderQuickSettings", () => {
     render(
       renderQuickSettings(
         createProps({
-          theme: "claw",
+          theme: "talon",
           hasCustomTheme: true,
           customThemeLabel: "Light Green",
           setTheme,

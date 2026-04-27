@@ -1,32 +1,36 @@
-export type ThemeName = "claw" | "knot" | "dash" | "custom";
+export type ThemeName = "talon" | "neon" | "turtle" | "custom";
 export type ThemeMode = "system" | "light" | "dark";
 export type ResolvedTheme =
-  | "dark"
-  | "light"
-  | "openknot"
-  | "openknot-light"
-  | "dash"
-  | "dash-light"
+  | "talon"
+  | "talon-light"
+  | "neon"
+  | "neon-light"
+  | "turtle"
+  | "turtle-light"
   | "custom"
   | "custom-light";
 
-export const VALID_THEME_NAMES = new Set<ThemeName>(["claw", "knot", "dash", "custom"]);
-const VALID_THEME_MODES = new Set<ThemeMode>(["system", "light", "dark"]);
+export const VALID_THEME_NAMES = new Set<ThemeName>(["talon", "neon", "turtle", "custom"]);
+export const VALID_THEME_MODES = new Set<ThemeMode>(["system", "light", "dark"]);
 
 type ThemeSelection = { theme: ThemeName; mode: ThemeMode };
 
+// Migrate persisted values from earlier UI builds onto the current theme set.
 const LEGACY_MAP: Record<string, ThemeSelection> = {
-  defaultTheme: { theme: "claw", mode: "dark" },
-  docsTheme: { theme: "claw", mode: "light" },
-  lightTheme: { theme: "knot", mode: "dark" },
-  landingTheme: { theme: "knot", mode: "dark" },
-  newTheme: { theme: "knot", mode: "dark" },
-  dark: { theme: "claw", mode: "dark" },
-  light: { theme: "claw", mode: "light" },
-  openknot: { theme: "knot", mode: "dark" },
-  fieldmanual: { theme: "dash", mode: "dark" },
-  clawdash: { theme: "dash", mode: "light" },
-  system: { theme: "claw", mode: "system" },
+  defaultTheme: { theme: "talon", mode: "dark" },
+  docsTheme: { theme: "talon", mode: "light" },
+  lightTheme: { theme: "neon", mode: "dark" },
+  landingTheme: { theme: "neon", mode: "dark" },
+  newTheme: { theme: "neon", mode: "dark" },
+  dark: { theme: "talon", mode: "dark" },
+  light: { theme: "talon", mode: "light" },
+  claw: { theme: "talon", mode: "dark" },
+  knot: { theme: "neon", mode: "dark" },
+  dash: { theme: "turtle", mode: "dark" },
+  openknot: { theme: "neon", mode: "dark" },
+  fieldmanual: { theme: "turtle", mode: "dark" },
+  clawdash: { theme: "turtle", mode: "light" },
+  system: { theme: "talon", mode: "system" },
 };
 
 function prefersLightScheme(): boolean {
@@ -37,7 +41,7 @@ function prefersLightScheme(): boolean {
 }
 
 export function resolveSystemTheme(): ResolvedTheme {
-  return prefersLightScheme() ? "light" : "dark";
+  return prefersLightScheme() ? "talon-light" : "talon";
 }
 
 export function parseThemeSelection(
@@ -49,7 +53,7 @@ export function parseThemeSelection(
 
   const normalizedTheme = VALID_THEME_NAMES.has(theme as ThemeName)
     ? (theme as ThemeName)
-    : (LEGACY_MAP[theme]?.theme ?? "claw");
+    : (LEGACY_MAP[theme]?.theme ?? "talon");
   const normalizedMode = VALID_THEME_MODES.has(mode as ThemeMode)
     ? (mode as ThemeMode)
     : (LEGACY_MAP[theme]?.mode ?? "system");
@@ -66,14 +70,14 @@ function resolveMode(mode: ThemeMode): "light" | "dark" {
 
 export function resolveTheme(theme: ThemeName, mode: ThemeMode): ResolvedTheme {
   const resolvedMode = resolveMode(mode);
-  if (theme === "claw") {
-    return resolvedMode === "light" ? "light" : "dark";
+  if (theme === "talon") {
+    return resolvedMode === "light" ? "talon-light" : "talon";
   }
-  if (theme === "knot") {
-    return resolvedMode === "light" ? "openknot-light" : "openknot";
+  if (theme === "neon") {
+    return resolvedMode === "light" ? "neon-light" : "neon";
   }
-  if (theme === "dash") {
-    return resolvedMode === "light" ? "dash-light" : "dash";
+  if (theme === "turtle") {
+    return resolvedMode === "light" ? "turtle-light" : "turtle";
   }
   return resolvedMode === "light" ? "custom-light" : "custom";
 }
