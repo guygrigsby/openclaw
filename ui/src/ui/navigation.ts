@@ -3,12 +3,12 @@ import type { IconName } from "./icons.js";
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";
 
 export const TAB_GROUPS = [
-  { label: "chat", tabs: ["chat"] },
+  { label: "chat", tabs: ["chat", "images", "studio"] },
   {
     label: "control",
     tabs: ["overview", "instances", "sessions", "usage", "cron"],
   },
-  { label: "agent", tabs: ["agents", "skills", "nodes", "dreams"] },
+  { label: "agent", tabs: ["agents", "skills", "plugins", "nodes", "dreams"] },
   {
     label: "settings",
     tabs: ["config"],
@@ -24,8 +24,11 @@ export type Tab =
   | "usage"
   | "cron"
   | "skills"
+  | "plugins"
   | "nodes"
   | "chat"
+  | "images"
+  | "studio"
   | "config"
   | "communications"
   | "appearance"
@@ -57,8 +60,11 @@ const TAB_PATHS: Record<Tab, string> = {
   usage: "/usage",
   cron: "/cron",
   skills: "/skills",
+  plugins: "/plugins",
   nodes: "/nodes",
   chat: "/chat",
+  images: "/images",
+  studio: "/studio",
   config: "/config",
   communications: "/communications",
   appearance: "/appearance",
@@ -175,6 +181,10 @@ export function iconForTab(tab: Tab): IconName {
       return "folder";
     case "chat":
       return "messageSquare";
+    case "images":
+      return "spark";
+    case "studio":
+      return "spark";
     case "overview":
       return "barChart";
     case "channels":
@@ -189,6 +199,8 @@ export function iconForTab(tab: Tab): IconName {
       return "loader";
     case "skills":
       return "zap";
+    case "plugins":
+      return "puzzle";
     case "nodes":
       return "monitor";
     case "config":

@@ -357,6 +357,9 @@ function renderSidebarRecentSession(state: AppViewState, row: GatewaySessionRow)
 // Lazy-loaded view modules are deferred so the initial bundle stays small.
 // The shared loader renders visible fallback states instead of leaving a tab blank.
 const lazyAgents = createLazyView(() => import("./views/agents.ts"), notifyLazyViewChanged);
+const lazyImages = createLazyView(() => import("./views/images.ts"), notifyLazyViewChanged);
+const lazyStudio = createLazyView(() => import("./views/studio.ts"), notifyLazyViewChanged);
+const lazyPlugins = createLazyView(() => import("./views/plugins.ts"), notifyLazyViewChanged);
 const lazyChannels = createLazyView(() => import("./views/channels.ts"), notifyLazyViewChanged);
 const lazyCron = createLazyView(() => import("./views/cron.ts"), notifyLazyViewChanged);
 const lazyDebug = createLazyView(() => import("./views/debug.ts"), notifyLazyViewChanged);
@@ -522,6 +525,7 @@ const INFRASTRUCTURE_SECTION_KEYS = [
   "mcp",
 ] as const;
 const AI_AGENTS_SECTION_KEYS = [
+  "__aiOverview__",
   "agents",
   "models",
   "skills",
@@ -1572,7 +1576,10 @@ export function renderApp(state: AppViewState) {
         return renderConfigTab({
           formMode: state.aiAgentsFormMode,
           searchQuery: state.aiAgentsSearchQuery,
-          activeSection: aiAgentsSelection.activeSection,
+          // Default the user-first surface to Overview when the user
+          // hasn't picked a section yet — the curated default-model
+          // picker is the most common reason to visit this tab.
+          activeSection: aiAgentsSelection.activeSection ?? "__aiOverview__",
           activeSubsection: aiAgentsSelection.activeSubsection,
           onFormModeChange: (mode) => (state.aiAgentsFormMode = mode),
           onSearchChange: (query) => (state.aiAgentsSearchQuery = query),
@@ -1583,6 +1590,7 @@ export function renderApp(state: AppViewState) {
           onSubsectionChange: (section) => (state.aiAgentsActiveSubsection = section),
           navRootLabel: "AI & Agents",
           includeSections: [...AI_AGENTS_SECTION_KEYS],
+          includeVirtualSections: true,
         });
       default:
         return nothing;
@@ -2857,6 +2865,25 @@ export function renderApp(state: AppViewState) {
                 }),
               ),
             )
+          : nothing}
+        ${state.tab === "images"
+          ? renderLazyView(lazyImages, (m) =>
+              m.renderImages({
+                client: state.client,
+                sessionKey: state.sessionKey || "agent:main:main",
+              }),
+            )
+          : nothing}
+        ${state.tab === "studio"
+          ? renderLazyView(lazyStudio, (m) =>
+              m.renderStudio({
+                client: state.client,
+                sessionKey: state.sessionKey || "agent:main:main",
+              }),
+            )
+          : nothing}
+        ${state.tab === "plugins"
+          ? renderLazyView(lazyPlugins, (m) => m.renderPlugins({ client: state.client }))
           : nothing}
         ${state.tab === "logs"
           ? renderSettingsWorkspace(
