@@ -343,7 +343,7 @@ describe("config view", () => {
     const tabs = Array.from(container.querySelectorAll(".config-top-tabs__tab")).map((tab) =>
       tab.textContent?.trim(),
     );
-    expect(tabs).toEqual(["Settings", "Agents", "Gateway", "Theme"]);
+    expect(tabs).toEqual(["Settings", "Overview", "Agents", "Gateway", "Theme"]);
 
     const btn = findButtonByText(container, "Gateway");
     btn.click();
