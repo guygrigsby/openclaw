@@ -108,7 +108,7 @@ describe("overview view rendering", () => {
 
     const hint = container.querySelector(".mono")?.closest(".muted") ?? null;
     expect(compactText(hint)).toBe(
-      "Scope upgrade pending approval. This device is already paired, but the requested wider scope is waiting for approval. openclaw devices approve req-123 openclaw devices list On mobile? Copy the full URL (including #token=...) from openclaw dashboard --no-open on your desktop. Docs: Device pairing",
+      "Scope upgrade pending approval. This device is already paired, but the requested wider scope is waiting for approval. openclaw devices approve req-123 openclaw devices list On mobile? Copy the full URL (including #token=...) from talon dashboard --no-open on your desktop. Docs: Device pairing",
     );
     expect([...container.querySelectorAll(".mono")].map((node) => node.textContent)).toEqual([
       "openclaw devices approve req-123",
@@ -128,7 +128,7 @@ describe("overview view rendering", () => {
 
     const hint = container.querySelector(".mono")?.closest(".muted") ?? null;
     expect(compactText(hint)).toBe(
-      "Scope upgrade pending approval. This device is already paired, but the requested wider scope is waiting for approval. openclaw devices list On mobile? Copy the full URL (including #token=...) from openclaw dashboard --no-open on your desktop. Docs: Device pairing",
+      "Scope upgrade pending approval. This device is already paired, but the requested wider scope is waiting for approval. openclaw devices list On mobile? Copy the full URL (including #token=...) from talon dashboard --no-open on your desktop. Docs: Device pairing",
     );
     expect([...container.querySelectorAll(".mono")].map((node) => node.textContent)).toEqual([
       "openclaw devices list",
