@@ -13,7 +13,7 @@
       "kind": "html-text",
       "name": "text",
       "path": "ui/src/ui/app-render.ts",
-      "text": "OpenClaw"
+      "text": "Talon"
     },
     {
       "count": 1,
@@ -342,7 +342,7 @@
       "kind": "html-text",
       "name": "text",
       "path": "ui/src/ui/components/dashboard-header.ts",
-      "text": "OpenClaw"
+      "text": "Talon"
     },
     {
       "count": 1,
@@ -1706,6 +1706,132 @@
       "count": 1,
       "kind": "html-attribute",
       "name": "placeholder",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "anthropic/claude-opus-4-7, openai/gpt-4o, ..."
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "placeholder",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "provider/model-id"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": ". Use this overview to change the global default; switch tabs for everything else."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "(none configured)"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": ") — for example"
+    },
+    {
+      "count": 2,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Agents"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "anthropic/claude-sonnet-4-6"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Comma-separated list. Tried in order if the primary fails."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Configured"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "deepseek/deepseek-chat"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Default model"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Fallbacks"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Models in use"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "or"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Per-agent settings (workspace, tools, model override) live under"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "Primary"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "provider/model"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-ai-overview.ts",
+      "text": "The model agents use when none is set per-agent. Provider-prefixed ("
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "placeholder",
       "path": "ui/src/ui/views/config-form.node.ts",
       "text": "Key"
     },
@@ -1743,6 +1869,13 @@
       "name": "text",
       "path": "ui/src/ui/views/config-form.node.ts",
       "text": "Add Entry"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/config-form.node.ts",
+      "text": "Advanced"
     },
     {
       "count": 1,
@@ -2372,7 +2505,7 @@
       "kind": "html-text",
       "name": "text",
       "path": "ui/src/ui/views/config-quick.ts",
-      "text": "Choose how much workspace context OpenClaw injects into each run. These profiles do not change your model, tools, channels, or theme."
+      "text": "Choose how much workspace context Talon injects into each run. These profiles do not change your model, tools, channels, or theme."
     },
     {
       "count": 1,
@@ -2596,20 +2729,6 @@
       "kind": "object-property",
       "name": "label",
       "path": "ui/src/ui/views/config-quick.ts",
-      "text": "Claw"
-    },
-    {
-      "count": 1,
-      "kind": "object-property",
-      "name": "label",
-      "path": "ui/src/ui/views/config-quick.ts",
-      "text": "Dash"
-    },
-    {
-      "count": 1,
-      "kind": "object-property",
-      "name": "label",
-      "path": "ui/src/ui/views/config-quick.ts",
       "text": "Default"
     },
     {
@@ -2631,13 +2750,6 @@
       "kind": "object-property",
       "name": "label",
       "path": "ui/src/ui/views/config-quick.ts",
-      "text": "Knot"
-    },
-    {
-      "count": 1,
-      "kind": "object-property",
-      "name": "label",
-      "path": "ui/src/ui/views/config-quick.ts",
       "text": "L"
     },
     {
@@ -2646,6 +2758,13 @@
       "name": "label",
       "path": "ui/src/ui/views/config-quick.ts",
       "text": "M"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config-quick.ts",
+      "text": "Neon"
     },
     {
       "count": 1,
@@ -2674,6 +2793,20 @@
       "name": "label",
       "path": "ui/src/ui/views/config-quick.ts",
       "text": "Slight"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config-quick.ts",
+      "text": "Talon"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config-quick.ts",
+      "text": "Turtle"
     },
     {
       "count": 1,
@@ -2995,21 +3128,21 @@
       "kind": "object-property",
       "name": "description",
       "path": "ui/src/ui/views/config.ts",
-      "text": "Black & red"
+      "text": "80s laser light show"
     },
     {
       "count": 1,
       "kind": "object-property",
       "name": "description",
       "path": "ui/src/ui/views/config.ts",
-      "text": "Chocolate blueprint"
+      "text": "Crow blue on raven black"
     },
     {
       "count": 1,
       "kind": "object-property",
       "name": "description",
       "path": "ui/src/ui/views/config.ts",
-      "text": "Chroma family"
+      "text": "Forest green"
     },
     {
       "count": 1,
@@ -3100,13 +3233,6 @@
       "kind": "object-property",
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
-      "text": "Claw"
-    },
-    {
-      "count": 1,
-      "kind": "object-property",
-      "name": "label",
-      "path": "ui/src/ui/views/config.ts",
       "text": "Cli"
     },
     {
@@ -3136,13 +3262,6 @@
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
       "text": "Cron"
-    },
-    {
-      "count": 1,
-      "kind": "object-property",
-      "name": "label",
-      "path": "ui/src/ui/views/config.ts",
-      "text": "Dash"
     },
     {
       "count": 1,
@@ -3185,13 +3304,6 @@
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
       "text": "Infrastructure"
-    },
-    {
-      "count": 1,
-      "kind": "object-property",
-      "name": "label",
-      "path": "ui/src/ui/views/config.ts",
-      "text": "Knot"
     },
     {
       "count": 1,
@@ -3247,6 +3359,13 @@
       "kind": "object-property",
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
+      "text": "Neon"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config.ts",
       "text": "NodeHost"
     },
     {
@@ -3255,6 +3374,13 @@
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
       "text": "Other"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config.ts",
+      "text": "Overview"
     },
     {
       "count": 1,
@@ -3303,6 +3429,13 @@
       "kind": "object-property",
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
+      "text": "Talon"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config.ts",
       "text": "Theme"
     },
     {
@@ -3311,6 +3444,13 @@
       "name": "label",
       "path": "ui/src/ui/views/config.ts",
       "text": "Tools"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/config.ts",
+      "text": "Turtle"
     },
     {
       "count": 1,
@@ -3757,6 +3897,97 @@
       "count": 1,
       "kind": "html-attribute",
       "name": "placeholder",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "a cute lobster wearing a tiny crown, watercolor"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Remove from gallery"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Close"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Delete"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Generate an image with ComfyUI. Pick a shipped workflow below or configure your own under"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Images"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "images.providers.comfyui"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "load failed"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "loading…"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Negative prompt (optional)"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "No images yet — generate one above."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Prompt"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/images.ts",
+      "text": "Workflow / model"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "placeholder",
       "path": "ui/src/ui/views/login-gate.ts",
       "text": "ws://127.0.0.1:18789"
     },
@@ -3765,7 +3996,7 @@
       "kind": "html-text",
       "name": "text",
       "path": "ui/src/ui/views/login-gate.ts",
-      "text": "OpenClaw"
+      "text": "Talon"
     },
     {
       "count": 1,
@@ -4227,7 +4458,7 @@
       "kind": "html-attribute",
       "name": "placeholder",
       "path": "ui/src/ui/views/overview.ts",
-      "text": "OPENCLAW_GATEWAY_TOKEN"
+      "text": "TALON_GATEWAY_TOKEN"
     },
     {
       "count": 1,
@@ -4305,6 +4536,363 @@
       "name": "text",
       "path": "ui/src/ui/views/overview.ts",
       "text": "openclaw doctor --generate-gateway-token"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "placeholder",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "123456:ABC-..."
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "placeholder",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Filter bundled extensions"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Currently running as a subprocess plugin"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Native plugin: statically compiled, no runtime dependencies, no npm install required"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Referenced by your active config — uninstalling will break this integration"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": ". Future replies in your chat are routed to the"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "(id"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "(or any message). When you click Continue, talon will wait up to 90 seconds for your message and capture your sender id."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "@BotFather"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "/newbot"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "/start"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "→ copy the token."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "✓ talon is configured for"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "agent."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Bundled openclaw extensions. Install runtime npm deps per extension here."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Calling getMe…"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Captured sender"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "channel id:"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Click Save to write the channel config and send a confirmation DM. The plugin will spawn after the next gateway restart."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Close"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Continue"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "docs:"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Done"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Get a bot token from"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "In use"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Loaded"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Loading details…"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "main"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Native"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Now open Telegram and"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "npm output"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "npm package:"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Open Telegram, DM the bot. We'll capture the first message that arrives. Cancel and reopen the wizard to retry."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Plugins"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Reset"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Restart"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Save"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Telegram setup"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Token verified. Bot:"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Uninstall"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Verify token"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Waiting for a message from"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "with"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Working…"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Writing config and sending confirmation DM…"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "All"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Error"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Loaded"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Native"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Needs Install"
+    },
+    {
+      "count": 1,
+      "kind": "object-property",
+      "name": "label",
+      "path": "ui/src/ui/views/plugins.ts",
+      "text": "Ready"
     },
     {
       "count": 1,
@@ -4501,6 +5089,279 @@
       "name": "label",
       "path": "ui/src/ui/views/skills.ts",
       "text": "Ready"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Delete this image from disk + gallery"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Download every image in the gallery"
+    },
+    {
+      "count": 1,
+      "kind": "html-attribute",
+      "name": "title",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Re-upload this image as the img2img source for the next run"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "(none)"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "🎲 Random — pick a fresh workflow per image"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "0.3 preserves the source closely; 0.7+ regenerates substantially."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Clear"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Close"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Delete"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Drop image to load metadata"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Each image draws a fresh builtin workflow. LoRA + IPAdapter sliders are workflow-specific and don't carry across — they're hidden in this mode. Prompt, negative, seed, steps, CFG, sampler, scheduler still apply."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Embedded ComfyUI prompt + workflow → form"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Gallery"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "gateway not connected"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Generate to fill the gallery."
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "ipadapter"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "IPAdapter weights"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "loading…"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "LoRA strengths"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "loras"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "negative"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Negative Prompt"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "no install URL on this preset"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Number of Images"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Open in CivitAI"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "prompt"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Prompt"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Random mode"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Randomize"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Replay"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "sampler"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Sampler"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Scheduler"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "seed"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Seed"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Source image (img2img)"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Style"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "uploading…"
+    },
+    {
+      "count": 1,
+      "kind": "html-text",
+      "name": "text",
+      "path": "ui/src/ui/views/studio.ts",
+      "text": "Workflow"
     },
     {
       "count": 1,
