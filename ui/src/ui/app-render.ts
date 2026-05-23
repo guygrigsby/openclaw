@@ -357,8 +357,6 @@ function renderSidebarRecentSession(state: AppViewState, row: GatewaySessionRow)
 // Lazy-loaded view modules are deferred so the initial bundle stays small.
 // The shared loader renders visible fallback states instead of leaving a tab blank.
 const lazyAgents = createLazyView(() => import("./views/agents.ts"), notifyLazyViewChanged);
-const lazyImages = createLazyView(() => import("./views/images.ts"), notifyLazyViewChanged);
-const lazyStudio = createLazyView(() => import("./views/studio.ts"), notifyLazyViewChanged);
 const lazyPlugins = createLazyView(() => import("./views/plugins.ts"), notifyLazyViewChanged);
 const lazyChannels = createLazyView(() => import("./views/channels.ts"), notifyLazyViewChanged);
 const lazyCron = createLazyView(() => import("./views/cron.ts"), notifyLazyViewChanged);
@@ -2864,22 +2862,6 @@ export function renderApp(state: AppViewState) {
                   onCall: () => callDebugMethod(state),
                 }),
               ),
-            )
-          : nothing}
-        ${state.tab === "images"
-          ? renderLazyView(lazyImages, (m) =>
-              m.renderImages({
-                client: state.client,
-                sessionKey: state.sessionKey || "agent:main:main",
-              }),
-            )
-          : nothing}
-        ${state.tab === "studio"
-          ? renderLazyView(lazyStudio, (m) =>
-              m.renderStudio({
-                client: state.client,
-                sessionKey: state.sessionKey || "agent:main:main",
-              }),
             )
           : nothing}
         ${state.tab === "plugins"

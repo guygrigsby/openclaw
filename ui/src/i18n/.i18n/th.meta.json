@@ -1,18 +1,14 @@
 {
   "fallbackKeys": [
-    "subtitles.images",
     "subtitles.plugins",
-    "subtitles.studio",
-    "tabs.images",
-    "tabs.plugins",
-    "tabs.studio"
+    "tabs.plugins"
   ],
-  "generatedAt": "2026-05-20T19:58:15.132Z",
+  "generatedAt": "2026-05-23T03:09:56.335Z",
   "locale": "th",
   "model": "claude-opus-4-7",
   "provider": "anthropic",
-  "sourceHash": "38ae2f46d9ad048d262f245e76563a6f60aa7f8c301fb77321307202e80b3fc9",
-  "totalKeys": 1123,
+  "sourceHash": "20622ab93544a55dafb2cce43afee1ab1036c54f35bc67cbd0bace15e85c86aa",
+  "totalKeys": 1119,
   "translatedKeys": 1117,
   "workflow": 1
 }
